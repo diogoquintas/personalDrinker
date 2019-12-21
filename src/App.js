@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from '@emotion/styled';
 import {css, keyframes} from '@emotion/core';
 
@@ -35,7 +35,6 @@ const List = styled.div`
   height: 100%;
   align-items: center;
   overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
 
   ${hideScrollbar}
@@ -95,13 +94,61 @@ const Title = styled.h2`
   text-align: center;
 `
 
+const pop = keyframes`
+  from {
+    transform: scale(2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+`
+
+const camelean = keyframes`
+  from {
+    filter: invert(1);
+  }
+
+  to {
+    filter: invert(0);
+  }
+`
+const Loader = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  animation: ${camelean} 1s ease infinite;
+  
+  & h1 {
+    animation: ${pop} 1s ease infinite;
+    font-size: 3rem;
+    color: white;
+  }
+
+  
+`;
+
+const NUMBER_OF_IMAGES = 7;
+
 function App() {
+  const [totalImagesLoaded, setTotalImagesLoaded] = useState(0);
+
   const [init, setInit] = useState(false);
   const [selected, setSelected] = useState();
 
   return (
     <>
-      <BarCounter src={`${process.env.PUBLIC_URL}/counter.jpeg`} />
+      {totalImagesLoaded < NUMBER_OF_IMAGES && <Loader><h1>Loading</h1></Loader>}
+      <BarCounter
+        onLoad={() => setTotalImagesLoaded(current => current + 1)}
+        src={`${process.env.PUBLIC_URL}/counter.jpeg`} />
       { !init && (
         <Title>
           Pick a beer
@@ -114,7 +161,9 @@ function App() {
       }}>
         {beers.map(beer => (
           <Beer onClick={() => setSelected(beer)} key={beer.name}>
-            <BeerImage src={`${process.env.PUBLIC_URL}/${beer.picture}`} />
+            <BeerImage
+              src={`${process.env.PUBLIC_URL}/${beer.picture}`}
+              onLoad={() => setTotalImagesLoaded(current => current + 1)} />
           </Beer>
         ))}
       </List>

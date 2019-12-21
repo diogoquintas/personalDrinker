@@ -13,7 +13,7 @@ const Img = styled.img`
     `}
 `;
 
-function Image({src, ...remainingProps}) {
+function Image({src, onLoad = () => {}, ...remainingProps}) {
     const [loaded, setLoaded] = useState(false);
     const prevSrc = useRef(src);
 
@@ -23,7 +23,10 @@ function Image({src, ...remainingProps}) {
         }
     }, [src])
 
-    return <Img src={src} loaded={loaded} onLoad={() => setLoaded(true)} {...remainingProps}/>
+    return <Img src={src} loaded={loaded} onLoad={() => {
+        setLoaded(true);
+        onLoad();
+    }} {...remainingProps}/>
 }
 
 export default Image;
