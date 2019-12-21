@@ -1,0 +1,56 @@
+[{
+    "name": "La Trappe Quadrupel",
+    "picture": "la_trappe.png",
+    "flag": "netherlands.png",
+    "manufacturer": "Bierbrouwerij De Koningshoeven B.V.",
+    "country": "Netherlands",
+    "alcohol": "10%",
+    "style": "Belgian Quadrupel",
+    "link": "https://www.beeradvocate.com/beer/profile/184/1402/"
+},{
+    "name": "Beer Geek Breakfast",
+    "picture": "beer_geek.png",
+    "flag": "denmark.png",
+    "manufacturer": "Mikkeller ApS",
+    "country": "Denmark",
+    "alcohol": "7.5%",
+    "style": "English Oatmeal Stout",
+    "link": "https://www.beeradvocate.com/beer/profile/13307/28877/"
+},{
+    "name": "Franziskaner Hefe-Weisse",
+    "picture": "franziskaner.png",
+    "flag": "germany.png",
+    "manufacturer": "Spaten-Franziskaner-Bräu",
+    "country": "Germany",
+    "alcohol": "5%",
+    "style": "German Hefeweizen",
+    "link": "https://www.beeradvocate.com/beer/profile/142/1946/"
+},{
+    "name": "Guinness Special Export Stout",
+    "picture": "guinness_special.gif",
+    "flag": "ireland.png",
+    "manufacturer": "Guinness Ltd.",
+    "country": "Ireland",
+    "countryImage": "https://image.flaticon.com/icons/png/512/197/197567.png",
+    "alcohol": "8%",
+    "style": "Foreign / Export Stout",
+    "link": "https://www.beeradvocate.com/beer/profile/209/10848/"
+},{
+    "name": "Trappistes Rochefort 10",
+    "picture": "trappistes_10.png",
+    "flag": "belgium.png",
+    "manufacturer": "Brasserie de Rochefort",
+    "country": "Belgium",
+    "alcohol": "11.3%",
+    "style": "Belgian Quadrupel",
+    "link": "https://www.beeradvocate.com/beer/profile/207/645/"
+}, {
+    "name": "Nut Brown Ale",
+    "picture": "brown_ale.png",
+    "flag": "england.png",
+    "manufacturer": "Samuel Smith Old Brewery (Tadcaster)",
+    "country": "England, United Kingdom",
+    "alcohol": "5%",
+    "style": "English Brown Ale",
+    "link": "https://www.beeradvocate.com/beer/profile/113/576/"
+}]
