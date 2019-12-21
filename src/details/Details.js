@@ -21,7 +21,9 @@ const Wrapper = styled(motion.div)`
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    padding-top: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 
 const Img = styled(Image)`
